@@ -230,8 +230,8 @@ require_once __DIR__ . '/../includes/header.php';
                                     <form action="" method="POST">
                                         <input type="hidden" name="action" value="remove">
                                         <input type="hidden" name="product_id" value="<?= $item['product_id'] ?>">
-                                        <button type="submit" class="btn btn-outline-danger btn-sm border-0 p-0" title="Hapus produk">
-                                            <i class="bi bi-trash fs-5"></i>
+                                        <button type="submit" class="btn btn-sm btn-outline-danger d-flex align-items-center justify-content-center" title="Hapus produk" style="width: 32px; height: 32px; padding: 0;">
+                                            <span class="material-icons-outlined" style="font-size: 1.15rem;">delete</span>
                                         </button>
                                     </form>
                                 </td>

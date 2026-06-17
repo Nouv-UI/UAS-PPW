@@ -1,7 +1,6 @@
 <?php
 // pages/detail.php
 require_once __DIR__ . '/../includes/config.php';
-require_once __DIR__ . '/../includes/header.php';
 
 $product_id = isset($_GET['id']) ? (int)$_GET['id'] : 0;
 
@@ -24,19 +23,7 @@ try {
     $error = 'Gagal memuat detail produk: ' . $e->getMessage();
 }
 
-if (!$product) {
-    echo '<div class="alert alert-warning py-5 text-center my-5" style="border-radius:20px;">';
-    echo '  <i class="bi bi-exclamation-circle fs-1 text-warning"></i>';
-    echo '  <h3 class="fw-bold mt-3">Produk Tidak Ditemukan</h3>';
-    echo '  <p class="text-muted">Produk yang Anda cari tidak terdaftar atau sudah tidak aktif.</p>';
-    echo '  <a href="/jp-annahls/pages/katalog.php" class="btn btn-primary-pill mt-3 px-4">Kembali ke Katalog</a>';
-    echo '</div>';
-    require_once __DIR__ . '/../includes/footer.php';
-    exit();
-}
-
-// Handle Add to Cart or Buy Now form submissions
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+if ($product && $_SERVER['REQUEST_METHOD'] === 'POST') {
     $qty = isset($_POST['quantity']) ? (int)$_POST['quantity'] : 1;
     if ($qty < 1) $qty = 1;
 
@@ -72,11 +59,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'text' => 'Produk berhasil ditambahkan ke keranjang belanja.'
     ];
 
-    if (isset($_POST['buy_now'])) {
-        header("Location: /jp-annahls/pages/cart.php");
-    } else {
-        header("Location: /jp-annahls/pages/detail.php?id=" . $product_id);
-    }
+    // Redirect directly to cart page
+    header("Location: /jp-annahls/pages/cart.php");
+    exit();
+}
+
+require_once __DIR__ . '/../includes/header.php';
+
+if (!$product) {
+    echo '<div class="alert alert-warning py-5 text-center my-5" style="border-radius:20px;">';
+    echo '  <i class="bi bi-exclamation-circle fs-1 text-warning"></i>';
+    echo '  <h3 class="fw-bold mt-3">Produk Tidak Ditemukan</h3>';
+    echo '  <p class="text-muted">Produk yang Anda cari tidak terdaftar atau sudah tidak aktif.</p>';
+    echo '  <a href="/jp-annahls/pages/katalog.php" class="btn btn-primary-pill mt-3 px-4">Kembali ke Katalog</a>';
+    echo '</div>';
+    require_once __DIR__ . '/../includes/footer.php';
     exit();
 }
 ?>
@@ -158,11 +155,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     </div>
 
                     <div class="row g-3">
-                        <div class="col-sm-6">
-                            <button type="submit" name="add_to_cart" class="btn btn-secondary-pill w-100 py-3"><i class="bi bi-cart-plus me-2"></i> Keranjang</button>
-                        </div>
-                        <div class="col-sm-6">
-                            <button type="submit" name="buy_now" class="btn btn-primary-pill w-100 py-3"><i class="bi bi-lightning-fill me-2"></i> Beli Sekarang</button>
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary-pill w-100 py-3"><i class="bi bi-cart-plus me-2"></i> Tambahkan ke Keranjang</button>
                         </div>
                     </div>
                 </form>

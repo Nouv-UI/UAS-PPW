@@ -152,95 +152,6 @@ require_once __DIR__ . '/../includes/header.php';
                                         </div>
                                     </td>
                                 </tr>
-
-                                <!-- MODAL DETIL PESANAN -->
-                                <div class="modal fade" id="orderDetailModalAdmin<?= $ord['order_id'] ?>" tabindex="-1" aria-hidden="true">
-                                    <div class="modal-dialog modal-dialog-centered">
-                                        <div class="modal-content" style="border-radius: 20px;">
-                                            <div class="modal-header border-0 pb-0">
-                                                <h5 class="modal-title fw-bold" style="color: var(--primary-color);">Daftar Item Order #<?= esc($ord['order_id']) ?></h5>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                            </div>
-                                            <div class="modal-body">
-                                                <p class="text-muted small mb-3">Pemesan: <strong><?= esc($ord['nama_pemesan']) ?></strong> (<?= esc($ord['phone_number'] ?: '-') ?>)</p>
-                                                
-                                                <?php
-                                                try {
-                                                    $item_stmt = $pdo->prepare("
-                                                        SELECT oi.*, p.product_name 
-                                                        FROM order_items oi
-                                                        JOIN products p ON oi.product_id = p.product_id
-                                                        WHERE oi.order_id = ?
-                                                    ");
-                                                    $item_stmt->execute([$ord['order_id']]);
-                                                    $items = $item_stmt->fetchAll();
-                                                } catch (PDOException $e) {
-                                                    $items = [];
-                                                }
-                                                ?>
-                                                
-                                                <ul class="list-group list-group-flush mb-4">
-                                                    <?php foreach ($items as $it): ?>
-                                                        <li class="list-group-item d-flex justify-content-between align-items-center px-0">
-                                                            <div>
-                                                                <h6 class="mb-0 fw-semibold text-dark"><?= esc($it['product_name']) ?></h6>
-                                                                <small class="text-muted"><?= esc($it['quantity']) ?> x <?= format_rupiah($it['unit_price']) ?></small>
-                                                            </div>
-                                                            <span class="fw-bold text-dark"><?= format_rupiah($it['subtotal']) ?></span>
-                                                        </li>
-                                                    <?php endforeach; ?>
-                                                </ul>
-
-                                                <?php if (!empty($ord['notes'])): ?>
-                                                    <div class="bg-light p-3 rounded-3 mb-3">
-                                                        <h6 class="fw-bold mb-1" style="font-size: 0.9rem;">Catatan Pembeli:</h6>
-                                                        <p class="mb-0 small text-muted"><?= esc($ord['notes']) ?></p>
-                                                    </div>
-                                                <?php endif; ?>
-                                                
-                                                <div class="d-flex justify-content-between align-items-center pt-2" style="border-top: 1px solid #ECECEC;">
-                                                    <span class="fw-semibold text-muted">Total Pembayaran</span>
-                                                    <span class="fw-bold fs-5" style="color: var(--primary-color);"><?= format_rupiah($ord['computed_total']) ?></span>
-                                                </div>
-                                            </div>
-                                            <div class="modal-footer border-0">
-                                                <button type="button" class="btn btn-secondary-pill px-4" data-bs-dismiss="modal">Tutup</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- MODAL UPDATE STATUS -->
-                                <div class="modal fade" id="orderStatusModalAdmin<?= $ord['order_id'] ?>" tabindex="-1" aria-hidden="true">
-                                    <div class="modal-dialog modal-dialog-centered modal-sm">
-                                        <div class="modal-content" style="border-radius: 20px;">
-                                            <div class="modal-header border-0 pb-0">
-                                                <h5 class="modal-title fw-bold" style="color: var(--primary-color);">Update Status</h5>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                            </div>
-                                            <form action="" method="POST" class="confirm-save-edit">
-                                                <input type="hidden" name="update_status" value="1">
-                                                <input type="hidden" name="order_id" value="<?= $ord['order_id'] ?>">
-                                                
-                                                <div class="modal-body">
-                                                    <div class="mb-3">
-                                                        <label class="form-label text-muted small">Status Saat Ini: <strong><?= strtoupper($ord['status']) ?></strong></label>
-                                                        <select class="form-select" name="status" required>
-                                                            <option value="pending" <?= $ord['status'] === 'pending' ? 'selected' : '' ?>>PENDING</option>
-                                                            <option value="confirmed" <?= $ord['status'] === 'confirmed' ? 'selected' : '' ?>>CONFIRMED</option>
-                                                            <option value="cancelled" <?= $ord['status'] === 'cancelled' ? 'selected' : '' ?>>CANCELLED</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <div class="modal-footer border-0">
-                                                    <button type="button" class="btn btn-secondary-pill px-3 py-1 btn-sm" data-bs-dismiss="modal">Batal</button>
-                                                    <button type="submit" class="btn btn-primary-pill px-3 py-1 btn-sm">Perbarui</button>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-
                             <?php endforeach; ?>
                         <?php else: ?>
                             <tr>
@@ -250,6 +161,100 @@ require_once __DIR__ . '/../includes/header.php';
                     </tbody>
                 </table>
             </div>
+        </div>
+
+        <!-- Modals Section (Outside Table to prevent shaking/jittering) -->
+        <?php if (!empty($orders)): ?>
+            <?php foreach ($orders as $ord): ?>
+                <!-- MODAL DETIL PESANAN -->
+                <div class="modal fade" id="orderDetailModalAdmin<?= $ord['order_id'] ?>" tabindex="-1" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content" style="border-radius: 20px;">
+                            <div class="modal-header border-0 pb-0">
+                                <h5 class="modal-title fw-bold" style="color: var(--primary-color);">Daftar Item Order #<?= esc($ord['order_id']) ?></h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <p class="text-muted small mb-3">Pemesan: <strong><?= esc($ord['nama_pemesan']) ?></strong> (<?= esc($ord['phone_number'] ?: '-') ?>)</p>
+                                
+                                <?php
+                                try {
+                                    $item_stmt = $pdo->prepare("
+                                        SELECT oi.*, p.product_name 
+                                        FROM order_items oi
+                                        JOIN products p ON oi.product_id = p.product_id
+                                        WHERE oi.order_id = ?
+                                    ");
+                                    $item_stmt->execute([$ord['order_id']]);
+                                    $items = $item_stmt->fetchAll();
+                                } catch (PDOException $e) {
+                                    $items = [];
+                                }
+                                ?>
+                                
+                                <ul class="list-group list-group-flush mb-4">
+                                    <?php foreach ($items as $it): ?>
+                                        <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+                                            <div>
+                                                <h6 class="mb-0 fw-semibold text-dark"><?= esc($it['product_name']) ?></h6>
+                                                <small class="text-muted"><?= esc($it['quantity']) ?> x <?= format_rupiah($it['unit_price']) ?></small>
+                                            </div>
+                                            <span class="fw-bold text-dark"><?= format_rupiah($it['subtotal']) ?></span>
+                                        </li>
+                                    <?php endforeach; ?>
+                                </ul>
+
+                                <?php if (!empty($ord['notes'])): ?>
+                                    <div class="bg-light p-3 rounded-3 mb-3">
+                                        <h6 class="fw-bold mb-1" style="font-size: 0.9rem;">Catatan Pembeli:</h6>
+                                        <p class="mb-0 small text-muted"><?= esc($ord['notes']) ?></p>
+                                    </div>
+                                <?php endif; ?>
+                                
+                                <div class="d-flex justify-content-between align-items-center pt-2" style="border-top: 1px solid #ECECEC;">
+                                    <span class="fw-semibold text-muted">Total Pembayaran</span>
+                                    <span class="fw-bold fs-5" style="color: var(--primary-color);"><?= format_rupiah($ord['computed_total']) ?></span>
+                                </div>
+                            </div>
+                            <div class="modal-footer border-0">
+                                <button type="button" class="btn btn-secondary-pill px-4" data-bs-dismiss="modal">Tutup</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MODAL UPDATE STATUS -->
+                <div class="modal fade" id="orderStatusModalAdmin<?= $ord['order_id'] ?>" tabindex="-1" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-sm">
+                        <div class="modal-content" style="border-radius: 20px;">
+                            <div class="modal-header border-0 pb-0">
+                                <h5 class="modal-title fw-bold" style="color: var(--primary-color);">Update Status</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <form action="" method="POST" class="confirm-save-edit">
+                                <input type="hidden" name="update_status" value="1">
+                                <input type="hidden" name="order_id" value="<?= $ord['order_id'] ?>">
+                                
+                                <div class="modal-body">
+                                    <div class="mb-3">
+                                        <label class="form-label text-muted small">Status Saat Ini: <strong><?= strtoupper($ord['status']) ?></strong></label>
+                                        <select class="form-select" name="status" required>
+                                            <option value="pending" <?= $ord['status'] === 'pending' ? 'selected' : '' ?>>PENDING</option>
+                                            <option value="confirmed" <?= $ord['status'] === 'confirmed' ? 'selected' : '' ?>>CONFIRMED</option>
+                                            <option value="cancelled" <?= $ord['status'] === 'cancelled' ? 'selected' : '' ?>>CANCELLED</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="modal-footer border-0">
+                                    <button type="button" class="btn btn-secondary-pill px-3 py-1 btn-sm" data-bs-dismiss="modal">Batal</button>
+                                    <button type="submit" class="btn btn-primary-pill px-3 py-1 btn-sm">Perbarui</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        <?php endif; ?>
         </div>
 
     </div>
