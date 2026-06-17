@@ -33,31 +33,13 @@ try {
         </div>
     </div>
     <div class="col-lg-6 text-center hero-image-col">
-        <!-- Hero Illustration using styled divs -->
-        <div class="position-relative d-inline-block">
-            <div class="rounded-circle overflow-hidden shadow-lg mx-auto hero-illustration-circle" style="border: 8px solid var(--navbar-bg);">
-                <svg viewBox="0 0 100 100" class="w-100 h-100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="100" height="100" fill="#FEFBF4"/>
-                    <circle cx="50" cy="50" r="40" fill="#FFF9DB"/>
-                    <!-- Banana leaf plate representation -->
-                    <path d="M10 50 C20 20, 80 20, 90 50 C80 80, 20 80, 10 50 Z" fill="#4CAF50"/>
-                    <path d="M15 50 C25 28, 75 28, 85 50 C75 72, 25 72, 15 50 Z" fill="#81C784"/>
-                    <!-- Indonesian snacks drawings (Klepon, Onde-onde) -->
-                    <!-- Klepons -->
-                    <circle cx="40" cy="42" r="10" fill="#2E7D32"/>
-                    <circle cx="40" cy="42" r="10" stroke="#FFFFFF" stroke-dasharray="2 2"/>
-                    <circle cx="60" cy="42" r="10" fill="#2E7D32"/>
-                    <circle cx="60" cy="42" r="10" stroke="#FFFFFF" stroke-dasharray="2 2"/>
-                    <!-- Onde-onde -->
-                    <circle cx="50" cy="58" r="11" fill="#FFB74D"/>
-                    <circle cx="50" cy="58" r="11" stroke="#FFFFFF" stroke-dasharray="3 1"/>
-                    <!-- Gethuk / Kue lapis representation -->
-                    <rect x="30" y="48" width="12" height="6" fill="#E91E63"/>
-                    <rect x="30" y="54" width="12" height="6" fill="#FFF9DB"/>
-                </svg>
+        <!-- Hero Storefront Photo -->
+        <div class="position-relative d-inline-block" style="max-width: 100%;">
+            <div class="rounded-4 overflow-hidden shadow-lg mx-auto hero-image-wrapper" style="border: 8px solid var(--navbar-bg); max-width: 480px;">
+                <img src="/jp-annahls/assets/img/toko_annahl.jpg" class="w-100 h-auto" alt="Toko Jajan Pasar An-NaHL" style="object-fit: cover; display: block;">
             </div>
             <!-- Decorative badge -->
-            <div class="position-absolute bottom-0 start-0 bg-white shadow p-3 rounded-4 border border-1" style="max-width: 180px; transform: rotate(-5deg);">
+            <div class="position-absolute bottom-0 start-0 bg-white shadow p-3 rounded-4 border border-1 hero-badge" style="max-width: 180px; transform: rotate(-5deg); z-index: 5;">
                 <p class="small fw-bold mb-1 text-uppercase" style="color: var(--primary-color);"><i class="bi bi-patch-check-fill"></i> 100% Halal</p>
                 <p class="small text-muted mb-0" style="font-size: 0.75rem;">Bahan alami pilihan tanpa pengawet.</p>
             </div>
@@ -173,7 +155,7 @@ try {
                 <h3 class="display-6 fw-bold mb-3" style="color: var(--primary-color);">Tentang An-NaHL</h3>
                 <div class="mx-auto" style="width: 120px; height: 4px; background-color: var(--primary-color); border-radius: 2px;"></div>
                 <p class="mt-4 text-muted" style="font-size: 0.95rem; line-height: 1.8;">
-                    Didirikan dengan tekad untuk melestarikan warisan kuliner Nusantara. Nama <strong>An-NaHL</strong> terinspirasi dari filosofi lebah yang selalu menghasilkan kebaikan yang bermanfaat bagi sekitar.
+                    Didirikan pada tahun 2014 untuk melestarikan jajanan pasar khas Yogyakarta. Nama An-NaHL terinspirasi dari filosofi lebah yang selalu menghasilkan kebaikan yang bermanfaat bagi sekitar.
                 </p>
             </div>
             <div class="col-lg-7">
@@ -199,7 +181,7 @@ try {
                     <div class="col-sm-6">
                         <div class="p-3 bg-white rounded-4 shadow-sm border border-1 h-100">
                             <h5 class="fw-bold" style="color: var(--primary-color);"><i class="bi bi-percent me-2"></i> Harga Terjangkau</h5>
-                            <p class="small text-muted mb-0">Menikmati cita rasa premium dengan harga yang tetap bersahabat untuk semua kalangan.</p>
+                            <p class="small text-muted mb-0">Menikmati rasa tradisional dengan harga yang tetap bersahabat.</p>
                         </div>
                     </div>
                 </div>

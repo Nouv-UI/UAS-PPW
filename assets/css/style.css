@@ -423,19 +423,13 @@ footer h5 {
         padding-right: 20px !important;
     }
     
-    /* Make the hero circle illustration slightly smaller to prevent any overflow on small screens */
-    .hero-illustration-circle {
-        width: 260px !important;
-        height: 260px !important;
-    }
-    
-    /* Scale the 100% Halal badge so it fits beautifully */
-    .homepage-container .hero-image-col .position-absolute {
+    /* Scale the 100% Halal badge so it fits beautifully on storefront image */
+    .hero-badge {
         max-width: 140px !important;
         padding: 8px 12px !important;
     }
     
-    .homepage-container .hero-image-col .position-absolute p {
+    .hero-badge p {
         font-size: 0.7rem !important;
     }
 }
