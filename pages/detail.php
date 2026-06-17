@@ -134,25 +134,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             <hr class="mb-4" style="border-color: #E5E7EB;">
 
-            <!-- Supplier Info Outlined Container -->
-            <div class="p-3 mb-4 rounded-4" style="border: 1px solid var(--primary-color); background-color: rgba(122, 26, 26, 0.02);">
-                <h6 class="fw-bold" style="color: var(--primary-color);"><i class="bi bi-truck me-2"></i> Informasi Pemasok (Supplier)</h6>
-                <div class="row g-2 mt-1" style="font-size: 0.9rem;">
-                    <div class="col-sm-4 text-muted">Nama Pemasok:</div>
-                    <div class="col-sm-8 fw-semibold text-dark"><?= esc($product['supplier_name'] ?: 'Pemasok Internal') ?></div>
-                    
-                    <?php if (!empty($product['supplier_phone'])): ?>
-                        <div class="col-sm-4 text-muted">Telepon:</div>
-                        <div class="col-sm-8 fw-semibold text-dark"><?= esc($product['supplier_phone']) ?></div>
-                    <?php endif; ?>
-                    
-                    <?php if (!empty($product['supplier_city'])): ?>
-                        <div class="col-sm-4 text-muted">Kota:</div>
-                        <div class="col-sm-8 fw-semibold text-dark"><?= esc($product['supplier_city']) ?></div>
-                    <?php endif; ?>
-                </div>
-            </div>
-            
+
             <div class="d-flex align-items-center mb-4">
                 <span class="text-muted me-3"><i class="bi bi-box-seam"></i> Stok Tersedia:</span>
                 <span class="fw-bold text-dark"><?= esc($product['stock']) ?> unit</span>
