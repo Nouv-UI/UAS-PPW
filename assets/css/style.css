@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+    --primary-color: #7A1A1A;
+    --primary-hover: #5A1212;
+    --bg-color: #FEFBF4;
+    --footer-bg: #1B2433;
+    --navbar-bg: #FFF9DB;
+    --card-bg: #FFFFFF;
+    --text-color: #333333;
+    --placeholder-bg: #E5E7EB;
+    --accent-teal: #064E3B;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+/* Floating Pill Navbar */
+.navbar-wrapper {
+    position: sticky;
+    top: 15px;
+    z-index: 1030;
+    margin: 15px auto;
+    max-width: 1200px;
+    padding: 0 15px;
+}
+
+.floating-navbar {
+    background-color: var(--navbar-bg) !important;
+    border-radius: 9999px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    padding: 10px 25px !important;
+    transition: all 0.3s ease;
+}
+
+.logo-circle {
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 1.5rem;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.logo-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.floating-navbar .nav-link {
+    color: var(--primary-color) !important;
+    font-weight: 600;
+    padding: 8px 16px !important;
+    transition: all 0.2s ease;
+}
+
+.floating-navbar .nav-link:hover,
+.floating-navbar .nav-link.active {
+    color: var(--primary-hover) !important;
+    opacity: 0.8;
+}
+
+/* Buttons */
+.btn-primary-pill {
+    background-color: var(--primary-color) !important;
+    color: #FFFFFF !important;
+    border: none;
+    border-radius: 9999px;
+    padding: 10px 24px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-primary-pill:hover {
+    background-color: var(--primary-hover) !important;
+    box-shadow: 0 4px 12px rgba(122, 26, 26, 0.3);
+}
+
+.btn-secondary-pill {
+    background-color: transparent !important;
+    color: var(--primary-color) !important;
+    border: 1px solid var(--primary-color) !important;
+    border-radius: 9999px;
+    padding: 10px 24px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary-pill:hover {
+    background-color: var(--primary-color) !important;
+    color: #FFFFFF !important;
+}
+
+.btn-tertiary-rounded {
+    background-color: transparent !important;
+    color: var(--primary-color) !important;
+    border: 1px solid var(--primary-color) !important;
+    border-radius: 10px;
+    padding: 8px 18px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-tertiary-rounded:hover {
+    background-color: var(--primary-color) !important;
+    color: #FFFFFF !important;
+}
+
+.btn-accent-outline {
+    background-color: transparent !important;
+    color: var(--accent-teal) !important;
+    border: 1px solid var(--accent-teal) !important;
+    border-radius: 9999px;
+    padding: 8px 18px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-accent-outline:hover {
+    background-color: var(--accent-teal) !important;
+    color: #FFFFFF !important;
+}
+
+/* Custom Cards */
+.custom-card {
+    background-color: var(--card-bg);
+    border-radius: 20px;
+    border: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.custom-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+}
+
+.custom-card .card-img-top {
+    height: 200px;
+    object-fit: cover;
+    background-color: var(--placeholder-bg);
+}
+
+.custom-card .card-body {
+    padding: 20px;
+}
+
+/* Outlined Container */
+.outlined-container {
+    border: 1px solid var(--primary-color);
+    border-radius: 40px;
+    padding: 30px;
+    background: transparent;
+}
+
+/* Footer */
+footer {
+    background-color: var(--footer-bg);
+    color: #FFFFFF;
+    padding: 60px 0 30px 0;
+    margin-top: auto;
+}
+
+footer a {
+    color: #D1D5DB;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+footer a:hover {
+    color: #FFFFFF;
+}
+
+footer h5 {
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+/* Forms styling */
+.form-control, .form-select {
+    border-radius: 10px;
+    border: 1px solid #CCCCCC;
+    padding: 10px 15px;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.25rem rgba(122, 26, 26, 0.25);
+}
+
+/* Sidebar navigation for Admin */
+.admin-sidebar {
+    background-color: #FFFFFF;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    padding: 20px;
+}
+
+.admin-sidebar .list-group-item {
+    border: none;
+    border-radius: 10px !important;
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: var(--text-color);
+    transition: all 0.2s ease;
+}
+
+.admin-sidebar .list-group-item:hover,
+.admin-sidebar .list-group-item.active {
+    background-color: var(--primary-color) !important;
+    color: #FFFFFF !important;
+}
+
+/* Table Style */
+.table-custom {
+    background-color: #FFFFFF;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+}
+
+.table-custom th {
+    background-color: var(--primary-color);
+    color: #FFFFFF;
+    font-weight: 600;
+    border: none;
+}
+
+.table-custom td {
+    vertical-align: middle;
+}
+
+/* Badges */
+.badge-primary {
+    background-color: var(--primary-color);
+    color: #FFFFFF;
+}
+
+.badge-outline-primary {
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    background: transparent;
+}

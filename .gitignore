@@ -1,0 +1,22 @@
+# XAMPP / Local config
+/includes/config_local.php
+
+# PHP Storm / VS Code files
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
+
+# Temporary files
+extracted_design/
+*.zip
+*.sql
