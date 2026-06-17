@@ -29,40 +29,27 @@ if (isset($_SESSION['cart'])) {
 <body>
 
     <!-- Floating Navbar Wrapper -->
-    <div class="navbar-wrapper">
-        <nav class="navbar navbar-expand-lg floating-navbar navbar-light bg-light">
+    <div class="navbar-wrapper d-flex align-items-center gap-3">
+        
+        <!-- Logo Circle (Terpisah) -->
+        <a href="/jp-annahls/index.php" class="text-decoration-none">
+            <div class="logo-circle">
+                <img src="/jp-annahls/assets/img/gambar_logomark.png" alt="Logo An-NaHL">
+            </div>
+        </a>
+
+        <!-- Main Navigation Pill (Beranda, Katalog, Keranjang) -->
+        <nav class="navbar navbar-expand-lg floating-navbar navbar-light bg-light flex-grow-1">
             <div class="container-fluid p-0 d-flex align-items-center justify-content-between">
                 
-                <!-- Logo -->
-                <a class="navbar-brand d-flex align-items-center me-3" href="/jp-annahls/index.php">
-                    <div class="logo-circle">
-                        <!-- Custom SVG Logo representing traditional snack (Klepon/Kue) -->
-                        <svg viewBox="0 0 100 100" width="60" height="60" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="50" cy="50" r="45" fill="#7A1A1A"/>
-                            <!-- Klepon visual -->
-                            <circle cx="50" cy="45" r="22" fill="#4CAF50"/>
-                            <!-- Coconut shavings white dots -->
-                            <circle cx="38" cy="38" r="3" fill="#FFFFFF"/>
-                            <circle cx="62" cy="38" r="3" fill="#FFFFFF"/>
-                            <circle cx="50" cy="58" r="3" fill="#FFFFFF"/>
-                            <circle cx="42" cy="50" r="2.5" fill="#FFFFFF"/>
-                            <circle cx="58" cy="50" r="2.5" fill="#FFFFFF"/>
-                            <!-- Liquid sugar drip -->
-                            <path d="M48 45C48 48 52 48 52 45C52 42 48 42 48 45Z" fill="#7A1A1A"/>
-                            <!-- Text overlay -->
-                            <text x="50" y="80" fill="#FEFBF4" font-size="12" font-weight="bold" text-anchor="middle">An-NaHL</text>
-                        </svg>
-                    </div>
-                    <span class="ms-2 d-none d-sm-inline fw-bold text-uppercase tracking-wider" style="color: #7A1A1A; font-size: 1.1rem;">Jajan Pasar</span>
-                </a>
 
                 <!-- Responsive Toggle Button -->
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="border: none; color: #7A1A1A;">
+                <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="border: none; color: #7A1A1A;">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
                 <!-- Navbar Links -->
-                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                     <ul class="navbar-nav align-items-lg-center">
                         <li class="nav-item">
                             <a class="nav-link" href="/jp-annahls/index.php"><i class="bi bi-house-door"></i> Beranda</a>
@@ -71,7 +58,7 @@ if (isset($_SESSION['cart'])) {
                             <a class="nav-link" href="/jp-annahls/pages/katalog.php"><i class="bi bi-grid"></i> Katalog</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link position-relative" href="/jp-annahls/pages/cart.php">
+                            <a class="nav-link position-relative me-lg-2" href="/jp-annahls/pages/cart.php">
                                 <i class="bi bi-cart3"></i> Keranjang
                                 <?php if ($cart_count > 0): ?>
                                     <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="font-size: 0.75rem;">
@@ -80,29 +67,40 @@ if (isset($_SESSION['cart'])) {
                                 <?php endif; ?>
                             </a>
                         </li>
-                        
-                        <?php if ($current_user): ?>
-                            <?php if ($current_user['role'] === 'admin'): ?>
-                                <li class="nav-item">
+
+                        <!-- Auth Links inside Collapsed Menu (Only visible on Mobile) -->
+                        <li class="nav-item d-lg-none mt-2 pt-2 border-top">
+                            <?php if ($current_user): ?>
+                                <?php if ($current_user['role'] === 'admin'): ?>
                                     <a class="nav-link text-danger fw-bold" href="/jp-annahls/pages/admin_dashboard.php"><i class="bi bi-speedometer2"></i> Admin Panel</a>
-                                </li>
-                            <?php endif; ?>
-                            <li class="nav-item">
+                                <?php endif; ?>
                                 <a class="nav-link" href="/jp-annahls/pages/profile.php"><i class="bi bi-person-circle"></i> <?= esc($current_user['nama_pemesan']) ?></a>
-                            </li>
-                            <li class="nav-item ms-lg-2">
-                                <a class="btn btn-secondary-pill py-1 px-3" href="/jp-annahls/pages/logout.php"><i class="bi bi-box-arrow-right"></i> Keluar</a>
-                            </li>
-                        <?php else: ?>
-                            <li class="nav-item ms-lg-2">
-                                <a class="btn btn-primary-pill py-2 px-4" href="/jp-annahls/pages/login.php"><i class="bi bi-box-arrow-in-right"></i> Masuk</a>
-                            </li>
-                        <?php endif; ?>
+                                <a class="btn btn-secondary-pill w-100 mt-2" href="/jp-annahls/pages/logout.php"><i class="bi bi-box-arrow-right"></i> Keluar</a>
+                            <?php else: ?>
+                                <a class="btn btn-primary-pill w-100 mt-2" href="/jp-annahls/pages/login.php"><i class="bi bi-box-arrow-in-right"></i> Masuk</a>
+                            <?php endif; ?>
+                        </li>
                     </ul>
                 </div>
                 
             </div>
         </nav>
+
+        <!-- Auth / User Pill (Only visible on Desktop) -->
+        <div class="auth-navbar-pill d-none d-lg-flex gap-2 align-items-center">
+            <?php if ($current_user): ?>
+                <?php if ($current_user['role'] === 'admin'): ?>
+                    <a class="nav-link text-danger fw-bold me-2" href="/jp-annahls/pages/admin_dashboard.php" style="font-size: 0.9rem;"><i class="bi bi-speedometer2"></i> Admin</a>
+                <?php endif; ?>
+                <a class="nav-link me-2 fw-semibold" href="/jp-annahls/pages/profile.php" style="color: var(--primary-color) !important; font-size: 0.9rem;">
+                    <i class="bi bi-person-circle"></i> <?= esc(explode(' ', $current_user['nama_pemesan'])[0]) ?>
+                </a>
+                <a class="btn btn-secondary-pill py-1 px-3" href="/jp-annahls/pages/logout.php" style="font-size: 0.85rem;"><i class="bi bi-box-arrow-right"></i> Keluar</a>
+            <?php else: ?>
+                <a class="btn btn-primary-pill py-2 px-4" href="/jp-annahls/pages/login.php" style="font-size: 0.9rem;"><i class="bi bi-box-arrow-in-right"></i> Masuk</a>
+            <?php endif; ?>
+        </div>
+
     </div>
 
     <!-- Alert Flash Messages -->
