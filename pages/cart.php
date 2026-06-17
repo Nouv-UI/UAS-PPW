@@ -194,10 +194,10 @@ require_once __DIR__ . '/../includes/header.php';
                     <thead>
                         <tr>
                             <th scope="col" style="width: 40%">Produk</th>
-                            <th scope="col" class="text-center" style="width: 15%">Harga</th>
-                            <th scope="col" class="text-center" style="width: 20%">Jumlah</th>
-                            <th scope="col" class="text-center" style="width: 15%">Subtotal</th>
-                            <th scope="col" class="text-center" style="width: 10%">Aksi</th>
+                            <th scope="col" style="width: 15%">Harga</th>
+                            <th scope="col" style="width: 20%">Jumlah</th>
+                            <th scope="col" style="width: 15%">Subtotal</th>
+                            <th scope="col" style="width: 10%">Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -217,20 +217,20 @@ require_once __DIR__ . '/../includes/header.php';
                                         </div>
                                     </div>
                                 </td>
-                                <td class="text-center"><?= format_rupiah($item['harga_jual']) ?></td>
-                                <td class="text-center">
-                                    <form action="" method="POST" class="d-flex align-items-center justify-content-center gap-1">
+                                <td><?= format_rupiah($item['harga_jual']) ?></td>
+                                <td>
+                                    <form action="" method="POST" class="d-flex align-items-center gap-1">
                                         <input type="hidden" name="action" value="update">
                                         <input type="hidden" name="product_id" value="<?= $item['product_id'] ?>">
                                         <input type="number" name="quantity" value="<?= $item['qty'] ?>" min="1" max="<?= $item['stock'] ?>" class="form-control text-center py-1" style="width: 70px;" onchange="this.form.submit()">
                                     </form>
                                 </td>
-                                <td class="text-center fw-bold" style="color: var(--primary-color);"><?= format_rupiah($item['subtotal']) ?></td>
-                                <td class="text-center">
+                                <td class="fw-bold" style="color: var(--primary-color);"><?= format_rupiah($item['subtotal']) ?></td>
+                                <td>
                                     <form action="" method="POST">
                                         <input type="hidden" name="action" value="remove">
                                         <input type="hidden" name="product_id" value="<?= $item['product_id'] ?>">
-                                        <button type="submit" class="btn btn-outline-danger btn-sm border-0" title="Hapus produk">
+                                        <button type="submit" class="btn btn-outline-danger btn-sm border-0 p-0" title="Hapus produk">
                                             <i class="bi bi-trash fs-5"></i>
                                         </button>
                                     </form>

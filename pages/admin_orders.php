@@ -71,13 +71,27 @@ require_once __DIR__ . '/../includes/header.php';
         <div class="admin-sidebar mb-4">
             <h5 class="fw-bold mb-3 px-3" style="color: var(--primary-color);">Menu Admin</h5>
             <div class="list-group list-group-flush">
-                <a href="/jp-annahls/pages/admin_dashboard.php" class="list-group-item list-group-item-action"><i class="bi bi-speedometer2 me-2"></i> Dashboard</a>
-                <a href="/jp-annahls/pages/admin_products.php" class="list-group-item list-group-item-action"><i class="bi bi-box-seam me-2"></i> Manajemen Produk</a>
-                <a href="/jp-annahls/pages/admin_categories.php" class="list-group-item list-group-item-action"><i class="bi bi-tags me-2"></i> Manajemen Kategori</a>
-                <a href="/jp-annahls/pages/admin_suppliers.php" class="list-group-item list-group-item-action"><i class="bi bi-truck me-2"></i> Manajemen Pemasok</a>
-                <a href="/jp-annahls/pages/admin_highlights.php" class="list-group-item list-group-item-action"><i class="bi bi-stars me-2"></i> Manajemen Highlight</a>
-                <a href="/jp-annahls/pages/admin_orders.php" class="list-group-item list-group-item-action active"><i class="bi bi-receipt me-2"></i> Manajemen Pesanan</a>
-                <a href="/jp-annahls/pages/admin_analytics.php" class="list-group-item list-group-item-action"><i class="bi bi-graph-up-arrow me-2"></i> Analitik Produk</a>
+                <a href="/jp-annahls/pages/admin_dashboard.php" class="list-group-item list-group-item-action<?= basename($_SERVER['SCRIPT_NAME']) === 'admin_dashboard.php' ? ' active' : '' ?> d-flex align-items-center">
+                    <span class="material-icons-outlined me-2" style="font-size: 1.25rem;">dashboard</span> Dashboard
+                </a>
+                <a href="/jp-annahls/pages/admin_products.php" class="list-group-item list-group-item-action<?= basename($_SERVER['SCRIPT_NAME']) === 'admin_products.php' ? ' active' : '' ?> d-flex align-items-center">
+                    <span class="material-icons-outlined me-2" style="font-size: 1.25rem;">grid_view</span> Produk
+                </a>
+                <a href="/jp-annahls/pages/admin_categories.php" class="list-group-item list-group-item-action<?= basename($_SERVER['SCRIPT_NAME']) === 'admin_categories.php' ? ' active' : '' ?> d-flex align-items-center">
+                    <span class="material-icons-outlined me-2" style="font-size: 1.25rem;">sell</span> Kategori
+                </a>
+                <a href="/jp-annahls/pages/admin_suppliers.php" class="list-group-item list-group-item-action<?= basename($_SERVER['SCRIPT_NAME']) === 'admin_suppliers.php' ? ' active' : '' ?> d-flex align-items-center">
+                    <span class="material-icons-outlined me-2" style="font-size: 1.25rem;">local_shipping</span> Suplier
+                </a>
+                <a href="/jp-annahls/pages/admin_highlights.php" class="list-group-item list-group-item-action<?= basename($_SERVER['SCRIPT_NAME']) === 'admin_highlights.php' ? ' active' : '' ?> d-flex align-items-center">
+                    <span class="material-icons-outlined me-2" style="font-size: 1.25rem;">auto_awesome</span> Highlight
+                </a>
+                <a href="/jp-annahls/pages/admin_orders.php" class="list-group-item list-group-item-action<?= basename($_SERVER['SCRIPT_NAME']) === 'admin_orders.php' ? ' active' : '' ?> d-flex align-items-center">
+                    <span class="material-icons-outlined me-2" style="font-size: 1.25rem;">receipt_long</span> Pesanan
+                </a>
+                <a href="/jp-annahls/pages/admin_analytics.php" class="list-group-item list-group-item-action<?= basename($_SERVER['SCRIPT_NAME']) === 'admin_analytics.php' ? ' active' : '' ?> d-flex align-items-center">
+                    <span class="material-icons-outlined me-2" style="font-size: 1.25rem;">trending_up</span> Analisis
+                </a>
             </div>
         </div>
     </div>
@@ -102,7 +116,7 @@ require_once __DIR__ . '/../includes/header.php';
                             <th>Total Belanja</th>
                             <th>Catatan</th>
                             <th>Status</th>
-                            <th class="text-center">Aksi</th>
+                            <th>Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -128,13 +142,13 @@ require_once __DIR__ . '/../includes/header.php';
                                             <span class="badge bg-danger text-white rounded-pill">Cancelled</span>
                                         <?php endif; ?>
                                     </td>
-                                    <td class="text-center">
-                                        <div class="d-flex justify-content-center gap-2">
+                                    <td>
+                                        <div class="d-flex gap-2">
                                             <!-- Button Trigger Detail Modal -->
-                                            <button class="btn btn-sm btn-outline-info" data-bs-toggle="modal" data-bs-target="#orderDetailModalAdmin<?= $ord['order_id'] ?>" title="Detail Item"><i class="bi bi-eye"></i></button>
+                                            <button class="btn btn-sm btn-outline-info d-flex align-items-center justify-content-center" data-bs-toggle="modal" data-bs-target="#orderDetailModalAdmin<?= $ord['order_id'] ?>" title="Detail Item" style="width: 32px; height: 32px; padding: 0;"><span class="material-icons-outlined" style="font-size: 1.15rem;">visibility</span></button>
                                             
                                             <!-- Button Trigger Edit Status Modal -->
-                                            <button class="btn btn-sm btn-outline-warning" data-bs-toggle="modal" data-bs-target="#orderStatusModalAdmin<?= $ord['order_id'] ?>" title="Update Status"><i class="bi bi-gear-fill"></i></button>
+                                            <button class="btn btn-sm btn-outline-warning d-flex align-items-center justify-content-center" data-bs-toggle="modal" data-bs-target="#orderStatusModalAdmin<?= $ord['order_id'] ?>" title="Update Status" style="width: 32px; height: 32px; padding: 0;"><span class="material-icons-outlined" style="font-size: 1.15rem;">settings</span></button>
                                         </div>
                                     </td>
                                 </tr>

@@ -23,9 +23,9 @@ try {
 <!-- Hero Section -->
 <div class="row align-items-center py-5 mb-5">
     <div class="col-lg-6 mb-4 mb-lg-0 hero-content">
-        <h1 class="display-4 fw-bold mb-3" style="color: var(--primary-color);">Cita Rasa Tradisional,<br>Kemasan Modern</h1>
+        <h1 class="display-4 fw-bold mb-3" style="color: var(--primary-color);">Cita Rasa yang Tradisional</h1>
         <p class="lead text-muted mb-4" style="font-size: 1.1rem; line-height: 1.8;">
-            Selamat datang di <strong>Jajan Pasar An-NaHL</strong>. Kami menghadirkan aneka jajanan pasar khas Nusantara yang dibuat dengan bahan alami premium, tanpa pengawet, dan cinta rasa autentik.
+            Selamat datang di <strong>Jajan Pasar An-NaHL</strong>. Kami menghadirkan aneka jajanan pasar khas Yogyakarta yang dibuat dengan bahan alami, tanpa pengawet, dengan rasa yang autentik.
         </p>
         <div class="d-flex flex-wrap gap-3 hero-buttons">
             <a href="/jp-annahls/pages/katalog.php" class="btn btn-primary-pill px-4 py-3"><i class="bi bi-bag-plus me-2"></i> Belanja Sekarang</a>

@@ -123,13 +123,27 @@ require_once __DIR__ . '/../includes/header.php';
         <div class="admin-sidebar mb-4">
             <h5 class="fw-bold mb-3 px-3" style="color: var(--primary-color);">Menu Admin</h5>
             <div class="list-group list-group-flush">
-                <a href="/jp-annahls/pages/admin_dashboard.php" class="list-group-item list-group-item-action"><i class="bi bi-speedometer2 me-2"></i> Dashboard</a>
-                <a href="/jp-annahls/pages/admin_products.php" class="list-group-item list-group-item-action active"><i class="bi bi-box-seam me-2"></i> Manajemen Produk</a>
-                <a href="/jp-annahls/pages/admin_categories.php" class="list-group-item list-group-item-action"><i class="bi bi-tags me-2"></i> Manajemen Kategori</a>
-                <a href="/jp-annahls/pages/admin_suppliers.php" class="list-group-item list-group-item-action"><i class="bi bi-truck me-2"></i> Manajemen Pemasok</a>
-                <a href="/jp-annahls/pages/admin_highlights.php" class="list-group-item list-group-item-action"><i class="bi bi-stars me-2"></i> Manajemen Highlight</a>
-                <a href="/jp-annahls/pages/admin_orders.php" class="list-group-item list-group-item-action"><i class="bi bi-receipt me-2"></i> Manajemen Pesanan</a>
-                <a href="/jp-annahls/pages/admin_analytics.php" class="list-group-item list-group-item-action"><i class="bi bi-graph-up-arrow me-2"></i> Analitik Produk</a>
+                <a href="/jp-annahls/pages/admin_dashboard.php" class="list-group-item list-group-item-action<?= basename($_SERVER['SCRIPT_NAME']) === 'admin_dashboard.php' ? ' active' : '' ?> d-flex align-items-center">
+                    <span class="material-icons-outlined me-2" style="font-size: 1.25rem;">dashboard</span> Dashboard
+                </a>
+                <a href="/jp-annahls/pages/admin_products.php" class="list-group-item list-group-item-action<?= basename($_SERVER['SCRIPT_NAME']) === 'admin_products.php' ? ' active' : '' ?> d-flex align-items-center">
+                    <span class="material-icons-outlined me-2" style="font-size: 1.25rem;">grid_view</span> Produk
+                </a>
+                <a href="/jp-annahls/pages/admin_categories.php" class="list-group-item list-group-item-action<?= basename($_SERVER['SCRIPT_NAME']) === 'admin_categories.php' ? ' active' : '' ?> d-flex align-items-center">
+                    <span class="material-icons-outlined me-2" style="font-size: 1.25rem;">sell</span> Kategori
+                </a>
+                <a href="/jp-annahls/pages/admin_suppliers.php" class="list-group-item list-group-item-action<?= basename($_SERVER['SCRIPT_NAME']) === 'admin_suppliers.php' ? ' active' : '' ?> d-flex align-items-center">
+                    <span class="material-icons-outlined me-2" style="font-size: 1.25rem;">local_shipping</span> Suplier
+                </a>
+                <a href="/jp-annahls/pages/admin_highlights.php" class="list-group-item list-group-item-action<?= basename($_SERVER['SCRIPT_NAME']) === 'admin_highlights.php' ? ' active' : '' ?> d-flex align-items-center">
+                    <span class="material-icons-outlined me-2" style="font-size: 1.25rem;">auto_awesome</span> Highlight
+                </a>
+                <a href="/jp-annahls/pages/admin_orders.php" class="list-group-item list-group-item-action<?= basename($_SERVER['SCRIPT_NAME']) === 'admin_orders.php' ? ' active' : '' ?> d-flex align-items-center">
+                    <span class="material-icons-outlined me-2" style="font-size: 1.25rem;">receipt_long</span> Pesanan
+                </a>
+                <a href="/jp-annahls/pages/admin_analytics.php" class="list-group-item list-group-item-action<?= basename($_SERVER['SCRIPT_NAME']) === 'admin_analytics.php' ? ' active' : '' ?> d-flex align-items-center">
+                    <span class="material-icons-outlined me-2" style="font-size: 1.25rem;">trending_up</span> Analisis
+                </a>
             </div>
         </div>
     </div>
@@ -218,7 +232,7 @@ require_once __DIR__ . '/../includes/header.php';
                                 <th>Harga Supplier</th>
                                 <th>Harga Jual</th>
                                 <th>Stok</th>
-                                <th class="text-center" style="width: 15%">Aksi</th>
+                                <th style="width: 15%">Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -231,7 +245,7 @@ require_once __DIR__ . '/../includes/header.php';
                                                     <?php if (!empty($p['image_url'])): ?>
                                                         <img src="/jp-annahls/assets/img/<?= esc($p['image_url']) ?>" class="w-100 h-100" style="object-fit: cover;">
                                                     <?php else: ?>
-                                                        <i class="bi bi-image text-muted opacity-50"></i>
+                                                        <span class="material-icons-outlined text-muted opacity-50" style="font-size: 1.5rem;">image</span>
                                                     <?php endif; ?>
                                                 </div>
                                                 <span class="fw-bold text-dark"><?= esc($p['product_name']) ?></span>
@@ -251,15 +265,15 @@ require_once __DIR__ . '/../includes/header.php';
                                         <td class="fw-bold" style="color: var(--primary-color);"><?= format_rupiah($p['harga_jual']) ?></td>
                                         <td>
                                             <?php if ($p['stock'] <= 5): ?>
-                                                <span class="text-danger fw-bold"><i class="bi bi-exclamation-triangle"></i> <?= esc($p['stock']) ?></span>
+                                                <span class="text-danger fw-bold"><span class="material-icons-outlined" style="font-size: 1.1rem; vertical-align: middle;">warning</span> <?= esc($p['stock']) ?></span>
                                             <?php else: ?>
                                                 <?= esc($p['stock']) ?>
                                             <?php endif; ?>
                                         </td>
-                                        <td class="text-center">
-                                            <div class="d-flex justify-content-center gap-2">
-                                                <a href="/jp-annahls/pages/admin_products.php?action=edit&id=<?= $p['product_id'] ?>" class="btn btn-sm btn-outline-warning" title="Edit"><i class="bi bi-pencil"></i></a>
-                                                <a href="/jp-annahls/pages/admin_products.php?action=delete&id=<?= $p['product_id'] ?>" class="btn btn-sm btn-outline-danger confirm-delete" data-item-name="<?= esc($p['product_name']) ?>" title="Hapus"><i class="bi bi-trash"></i></a>
+                                        <td>
+                                            <div class="d-flex gap-2">
+                                                <a href="/jp-annahls/pages/admin_products.php?action=edit&id=<?= $p['product_id'] ?>" class="btn btn-sm btn-outline-warning d-flex align-items-center justify-content-center" title="Edit" style="width: 32px; height: 32px; padding: 0;"><span class="material-icons-outlined" style="font-size: 1.15rem;">edit</span></a>
+                                                <a href="/jp-annahls/pages/admin_products.php?action=delete&id=<?= $p['product_id'] ?>" class="btn btn-sm btn-outline-danger confirm-delete d-flex align-items-center justify-content-center" data-item-name="<?= esc($p['product_name']) ?>" title="Hapus" style="width: 32px; height: 32px; padding: 0;"><span class="material-icons-outlined" style="font-size: 1.15rem;">delete</span></a>
                                             </div>
                                         </td>
                                     </tr>

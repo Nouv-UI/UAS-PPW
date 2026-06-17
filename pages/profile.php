@@ -110,7 +110,7 @@ require_once __DIR__ . '/../includes/header.php';
                                 <th>Tanggal</th>
                                 <th>Total Bayar</th>
                                 <th>Status</th>
-                                <th class="text-center">Aksi</th>
+                                 <th>Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -128,7 +128,7 @@ require_once __DIR__ . '/../includes/header.php';
                                             <span class="badge bg-danger-subtle text-danger border border-danger-subtle rounded-pill px-3 py-1">Dibatalkan</span>
                                         <?php endif; ?>
                                     </td>
-                                    <td class="text-center">
+                                    <td>
                                         <button class="btn btn-tertiary-rounded py-1 px-3" data-bs-toggle="modal" data-bs-target="#orderModal<?= $ord['order_id'] ?>">
                                             Detail
                                         </button>

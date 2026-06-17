@@ -53,13 +53,27 @@ require_once __DIR__ . '/../includes/header.php';
         <div class="admin-sidebar mb-4">
             <h5 class="fw-bold mb-3 px-3" style="color: var(--primary-color);">Menu Admin</h5>
             <div class="list-group list-group-flush">
-                <a href="/jp-annahls/pages/admin_dashboard.php" class="list-group-item list-group-item-action"><i class="bi bi-speedometer2 me-2"></i> Dashboard</a>
-                <a href="/jp-annahls/pages/admin_products.php" class="list-group-item list-group-item-action"><i class="bi bi-box-seam me-2"></i> Manajemen Produk</a>
-                <a href="/jp-annahls/pages/admin_categories.php" class="list-group-item list-group-item-action"><i class="bi bi-tags me-2"></i> Manajemen Kategori</a>
-                <a href="/jp-annahls/pages/admin_suppliers.php" class="list-group-item list-group-item-action"><i class="bi bi-truck me-2"></i> Manajemen Pemasok</a>
-                <a href="/jp-annahls/pages/admin_highlights.php" class="list-group-item list-group-item-action"><i class="bi bi-stars me-2"></i> Manajemen Highlight</a>
-                <a href="/jp-annahls/pages/admin_orders.php" class="list-group-item list-group-item-action"><i class="bi bi-receipt me-2"></i> Manajemen Pesanan</a>
-                <a href="/jp-annahls/pages/admin_analytics.php" class="list-group-item list-group-item-action active"><i class="bi bi-graph-up-arrow me-2"></i> Analitik Produk</a>
+                <a href="/jp-annahls/pages/admin_dashboard.php" class="list-group-item list-group-item-action d-flex align-items-center">
+                    <span class="material-icons-outlined me-2" style="font-size: 1.25rem;">dashboard</span> Dashboard
+                </a>
+                <a href="/jp-annahls/pages/admin_products.php" class="list-group-item list-group-item-action d-flex align-items-center">
+                    <span class="material-icons-outlined me-2" style="font-size: 1.25rem;">grid_view</span> Produk
+                </a>
+                <a href="/jp-annahls/pages/admin_categories.php" class="list-group-item list-group-item-action d-flex align-items-center">
+                    <span class="material-icons-outlined me-2" style="font-size: 1.25rem;">sell</span> Kategori
+                </a>
+                <a href="/jp-annahls/pages/admin_suppliers.php" class="list-group-item list-group-item-action d-flex align-items-center">
+                    <span class="material-icons-outlined me-2" style="font-size: 1.25rem;">local_shipping</span> Suplier
+                </a>
+                <a href="/jp-annahls/pages/admin_highlights.php" class="list-group-item list-group-item-action d-flex align-items-center">
+                    <span class="material-icons-outlined me-2" style="font-size: 1.25rem;">auto_awesome</span> Highlight
+                </a>
+                <a href="/jp-annahls/pages/admin_orders.php" class="list-group-item list-group-item-action d-flex align-items-center">
+                    <span class="material-icons-outlined me-2" style="font-size: 1.25rem;">receipt_long</span> Pesanan
+                </a>
+                <a href="/jp-annahls/pages/admin_analytics.php" class="list-group-item list-group-item-action active d-flex align-items-center">
+                    <span class="material-icons-outlined me-2" style="font-size: 1.25rem;">trending_up</span> Analisis
+                </a>
             </div>
         </div>
     </div>
@@ -102,11 +116,11 @@ require_once __DIR__ . '/../includes/header.php';
                     <thead>
                         <tr>
                             <th>Nama Produk</th>
-                            <th class="text-center">Frekuensi Order</th>
-                            <th class="text-center">Item Terjual</th>
-                            <th class="text-end">Pendapatan Kotor</th>
-                            <th class="text-end">Margin/Item</th>
-                            <th class="text-end">Total Laba Bersih</th>
+                            <th>Frekuensi Order</th>
+                            <th>Item Terjual</th>
+                            <th>Pendapatan Kotor</th>
+                            <th>Margin/Item</th>
+                            <th>Total Laba Bersih</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -114,16 +128,16 @@ require_once __DIR__ . '/../includes/header.php';
                             <?php foreach ($analytics as $row): ?>
                                 <tr>
                                     <td><strong class="text-dark"><?= esc($row['product_name']) ?></strong></td>
-                                    <td class="text-center"><?= esc($row['total_frekuensi_pesanan']) ?> kali</td>
-                                    <td class="text-center fw-semibold"><?= esc($row['total_item_terjual']) ?> unit</td>
-                                    <td class="text-end text-muted"><?= format_rupiah($row['total_pendapatan']) ?></td>
-                                    <td class="text-end text-secondary small">
+                                    <td><?= esc($row['total_frekuensi_pesanan']) ?> kali</td>
+                                    <td class="fw-semibold"><?= esc($row['total_item_terjual']) ?> unit</td>
+                                    <td class="text-muted"><?= format_rupiah($row['total_pendapatan']) ?></td>
+                                    <td class="text-secondary small">
                                         <?= format_rupiah($row['margin_per_item']) ?> 
                                         <div style="font-size: 0.75rem;" class="text-muted">
                                             (<?= round(($row['margin_per_item'] / ($row['harga_jual'] ?: 1)) * 100) ?>% Harga)
                                         </div>
                                     </td>
-                                    <td class="text-end fw-bold text-success"><?= format_rupiah($row['total_keuntungan']) ?></td>
+                                    <td class="fw-bold text-success"><?= format_rupiah($row['total_keuntungan']) ?></td>
                                 </tr>
                             <?php endforeach; ?>
                         <?php else: ?>
