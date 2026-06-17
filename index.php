@@ -73,24 +73,38 @@ try {
         <p class="text-muted">Tahukah Anda kisah unik di balik jajanan pasar favorit Anda?</p>
     </div>
     <div class="row g-4 justify-content-center">
-        <?php foreach ($highlights as $hl): ?>
+        <?php foreach ($highlights as $key => $hl): ?>
             <div class="col-md-4">
-                <div class="custom-card h-100 p-4 border border-1 d-flex flex-column justify-content-between">
-                    <div>
-                        <div class="d-flex align-items-center mb-3">
-                            <div class="p-2 rounded-circle me-3" style="background-color: var(--navbar-bg); color: var(--primary-color);">
-                                <i class="bi bi-star-fill fs-4"></i>
+                <div class="card custom-card h-100 border border-1 d-flex flex-column justify-content-between">
+                    <!-- Product Image -->
+                    <div class="position-relative overflow-hidden" style="height: 200px; background-color: var(--placeholder-bg);">
+                        <?php if (!empty($hl['image_url'])): ?>
+                            <img src="/jp-annahls/assets/img/<?= esc($hl['image_url']) ?>" class="w-100 h-100" style="object-fit: cover;">
+                        <?php else: ?>
+                            <div class="d-flex align-items-center justify-content-center w-100 h-100 text-muted">
+                                <i class="bi bi-image fs-1 opacity-50"></i>
                             </div>
-                            <h4 class="fw-bold m-0" style="color: var(--primary-color);"><?= esc($hl['product_name']) ?></h4>
-                        </div>
-                        <p class="text-muted italic" style="font-size: 0.95rem; line-height: 1.6; font-style: italic;">
-                            "<?= esc($hl['fun_fact']) ?>"
-                        </p>
+                        <?php endif; ?>
+                        
+                        <!-- Badge Dynamic Tag -->
+                        <span class="position-absolute top-0 end-0 m-3 badge rounded-pill bg-white text-dark border shadow-sm px-3 py-2" style="font-size: 0.8rem; font-weight: 600; color: var(--primary-color) !important;">
+                            <?= $key === 0 ? 'Best Seller' : 'Rekomendasi' ?>
+                        </span>
                     </div>
-                    <div class="mt-3">
-                        <a href="/jp-annahls/pages/katalog.php" class="btn btn-tertiary-rounded w-100">
-                            Lihat di Katalog <i class="bi bi-arrow-right ms-1"></i>
-                        </a>
+                    
+                    <!-- Card Body -->
+                    <div class="card-body p-4 d-flex flex-column justify-content-between flex-grow-1">
+                        <div>
+                            <h4 class="fw-bold mb-3" style="color: var(--primary-color) !important;"><?= esc($hl['product_name']) ?></h4>
+                            <p class="text-muted italic mb-4" style="font-size: 0.95rem; line-height: 1.6; font-style: italic;">
+                                "<?= esc($hl['fun_fact']) ?>"
+                            </p>
+                        </div>
+                        <div class="mt-auto">
+                            <a href="/jp-annahls/pages/katalog.php" class="btn btn-tertiary-rounded w-100">
+                                Lihat di Katalog <i class="bi bi-arrow-right ms-1"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>

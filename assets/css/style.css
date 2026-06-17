@@ -155,6 +155,16 @@ main {
     color: #FFFFFF !important;
 }
 
+footer .btn-accent-outline {
+    color: #10B981 !important; /* Bright high-contrast green for dark background */
+    border-color: #10B981 !important;
+}
+
+footer .btn-accent-outline:hover {
+    background-color: #10B981 !important;
+    color: #FFFFFF !important;
+}
+
 /* Custom Cards */
 .custom-card {
     background-color: var(--card-bg);
@@ -275,4 +285,93 @@ footer h5 {
     border: 1px solid var(--primary-color);
     color: var(--primary-color);
     background: transparent;
+}
+
+/* Modern Pagination Styling */
+.pagination {
+    gap: 8px;
+    border: none;
+}
+
+.pagination .page-item {
+    border: none;
+}
+
+.pagination .page-item .page-link {
+    border: 1px solid var(--primary-color) !important;
+    border-radius: 50% !important; /* Circular modern look */
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-color) !important;
+    background-color: transparent !important;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    box-shadow: none !important;
+}
+
+.pagination .page-item.active .page-link {
+    background-color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+    color: #FFFFFF !important;
+}
+
+.pagination .page-item.disabled .page-link {
+    border-color: var(--placeholder-bg) !important;
+    color: #9CA3AF !important;
+    opacity: 0.6;
+}
+
+.pagination .page-item .page-link:hover:not(.disabled) {
+    background-color: var(--navbar-bg) !important;
+    color: var(--primary-color) !important;
+    transform: translateY(-2px);
+}
+
+/* Responsive Styles for Mobile and Tablets */
+@media (max-width: 991.98px) {
+    .floating-navbar {
+        border-radius: 20px !important; /* Prevents background from turning into a circular shape when collapsed menu is open */
+        padding: 10px 20px !important;
+    }
+
+    .navbar-wrapper {
+        margin: 15px auto;
+        padding: 0 15px;
+    }
+
+    .logo-circle {
+        width: 50px;
+        height: 50px;
+    }
+
+
+    /* Main container padding adjustments */
+    main.container {
+        padding: 0 24px !important;
+        margin-top: 20px !important;
+    }
+
+    /* Adjust large Bootstrap paddings and margins for sections */
+    .py-5 {
+        padding-top: 2.25rem !important;
+        padding-bottom: 2.25rem !important;
+    }
+
+    .mb-5 {
+        margin-bottom: 2.25rem !important;
+    }
+
+    /* Adjust custom containers for mobile layout */
+    .outlined-container {
+        padding: 20px 15px;
+        border-radius: 25px;
+    }
+
+    /* Adjust footer padding on mobile */
+    footer {
+        padding: 40px 0 20px 0;
+    }
 }

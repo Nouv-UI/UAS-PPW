@@ -7,45 +7,58 @@
     <footer>
         <div class="container" style="max-width: 1200px;">
             <div class="row g-4 mb-5">
+                
                 <!-- Col 1: Brand Info -->
-                <div class="col-md-4">
-                    <h5 class="text-uppercase tracking-wider" style="color: #FFF9DB;">Jajan Pasar An-NaHL</h5>
-                    <p style="color: #D1D5DB; font-size: 0.9rem; line-height: 1.6;">
-                        Menyajikan kelezatan cita rasa tradisional Indonesia dengan kualitas terbaik dan higienis. Pilihan utama untuk kebutuhan arisan, hajatan, rapat, dan camilan harian Anda.
+                <div class="col-md-5">
+                    <div class="d-flex align-items-center mb-3">
+                        <img src="/jp-annahls/assets/img/gambar_logomark.png" alt="Logo" style="height: 35px; width: 35px; object-fit: contain; margin-right: 10px;">
+                        <h5 class="fw-bold m-0 text-white">Jajan Pasar An-NaHL</h5>
+                    </div>
+                    <p style="color: #D1D5DB; font-size: 0.9rem; line-height: 1.8;" class="mb-3">
+                        Jl. Boulevard, Berbah, Sleman,<br>
+                        Daerah Istimewa Yogyakarta
+                    </p>
+                    <p style="color: #D1D5DB; font-size: 0.9rem;" class="mb-1">
+                        Email: madukita@gmail.com
+                    </p>
+                    <p style="color: #D1D5DB; font-size: 0.9rem;">
+                        +62 828-1029-1938
                     </p>
                 </div>
+                
                 <!-- Col 2: Navigation Links -->
                 <div class="col-md-4">
-                    <h5 style="color: #FFF9DB;">Navigasi</h5>
+                    <h5 class="fw-bold text-white d-flex align-items-center mb-3">
+                        <i class="bi bi-compass me-2" style="color: #FFF9DB;"></i> Informasi Lainnya
+                    </h5>
                     <ul class="list-unstyled d-flex flex-column gap-2" style="font-size: 0.95rem;">
-                        <li><a href="/jp-annahls/index.php"><i class="bi bi-chevron-right me-1"></i> Beranda</a></li>
-                        <li><a href="/jp-annahls/pages/katalog.php"><i class="bi bi-chevron-right me-1"></i> Katalog Produk</a></li>
-                        <li><a href="/jp-annahls/pages/cart.php"><i class="bi bi-chevron-right me-1"></i> Keranjang Belanja</a></li>
-                        <li><a href="/jp-annahls/pages/profile.php"><i class="bi bi-chevron-right me-1"></i> Profil Saya</a></li>
+                        <li><a href="#" style="color: #D1D5DB; text-decoration: none;">Kebijakan Privasi</a></li>
+                        <li><a href="#" style="color: #D1D5DB; text-decoration: none;">Syarat & Ketentuan</a></li>
+                        <li><a href="#" style="color: #D1D5DB; text-decoration: none;">Pusat Bantuan</a></li>
+                        <li><a href="#" style="color: #D1D5DB; text-decoration: none;">Lacak Pesanan</a></li>
                     </ul>
                 </div>
-                <!-- Col 3: Outlined Accent Social Buttons -->
-                <div class="col-md-4">
-                    <h5 style="color: #FFF9DB;">Hubungi & Sosial Media</h5>
-                    <p style="color: #D1D5DB; font-size: 0.9rem;" class="mb-3">
-                        <i class="bi bi-geo-alt me-2"></i> Nogosaren, Sleman, D.I. Yogyakarta
-                    </p>
-                    <div class="d-flex flex-column gap-2" style="max-width: 250px;">
-                        <a href="https://wa.me/6287738473677" target="_blank" class="btn btn-accent-outline text-start">
-                            <i class="bi bi-whatsapp me-2"></i> Hubungi WhatsApp
+                
+                <!-- Col 3: Outlined Social Action Buttons -->
+                <div class="col-md-3">
+                    <div class="d-flex flex-column gap-2" style="max-width: 200px;">
+                        <a href="https://wa.me/6282810291938" target="_blank" class="btn btn-accent-outline text-start px-3 py-2 d-flex align-items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="me-2" viewBox="0 0 16 16"><path d="M13.601 2.326A7.85 7.85 0 0 0 8 0a7.85 7.85 0 0 0-7.3 5.4 7.87 7.87 0 0 0-.1 2.8 7.86 7.86 0 0 0 2.1 3.7l-.5 2.1 2.2-.6a7.85 7.85 0 0 0 3.6 1c4.4 0 7.9-3.5 7.9-7.9 0-2.1-.8-4-2.2-5.5m-5.6 10.4a6.57 6.57 0 0 1-3.3-.9l-.2-.1-1.4.4.4-1.3-.1-.2a6.5 6.5 0 0 1 5.6-9.6c3.6 0 6.6 2.9 6.6 6.6 0 3.6-3 6.5-6.6 6.5m3.6-4.9c-.2-.1-1.1-.6-1.3-.6-.2-.1-.3-.1-.5.1-.2.2-.6.7-.8.9-.1.1-.3.2-.5.1-.2-.1-.8-.3-1.6-1-.6-.5-1-1.1-1.1-1.3-.1-.2 0-.3.1-.4.1-.1.2-.2.3-.3.1-.1.1-.2.2-.3.1-.1 0-.3-.1-.4-.1-.3-.5-1.2-.6-1.5-.2-.4-.3-.3-.5-.3h-.4c-.2 0-.5.1-.6.4a2 2 0 0 0-.6 1.5c0 .9.7 1.8.8 1.9.1.1 1.4 2.1 3.4 3 .5.2.9.3 1.2.4.5.2 1 .1 1.3.1.4-.1.9-.4 1.1-.8.2-.4.2-.8.1-1-.1-.2-.2-.3-.5-.4"/></svg> WhatsApp
                         </a>
-                        <a href="https://instagram.com/jp_annahl" target="_blank" class="btn btn-accent-outline text-start">
-                            <i class="bi bi-instagram me-2"></i> Instagram @jp_annahl
+                        <a href="https://instagram.com/" target="_blank" class="btn btn-accent-outline text-start px-3 py-2 d-flex align-items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="me-2" viewBox="0 0 16 16"><path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/></svg> Instagram
                         </a>
-                        <button onclick="window.scrollTo({top: 0, behavior: 'smooth'});" class="btn btn-accent-outline text-start">
-                            <i class="bi bi-arrow-up-circle me-2"></i> Kembali Ke Atas
+                        <button onclick="window.scrollTo({top: 0, behavior: 'smooth'});" class="btn btn-accent-outline text-start px-3 py-2 d-flex align-items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="me-2" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5"/></svg> Back to Top
                         </button>
                     </div>
                 </div>
+
             </div>
+            
             <hr style="border-color: rgba(255, 255, 255, 0.1);">
-            <div class="text-center mt-4" style="color: #9CA3AF; font-size: 0.85rem;">
-                <p class="mb-0">&copy; <?= date('Y') ?> Jajan Pasar An-NaHL. Proyek Pemrograman Web Akademik.</p>
+            <div class="text-start mt-4" style="color: #9CA3AF; font-size: 0.85rem;">
+                <p class="mb-0">&copy; 2026 Jajan Pasar An-Nahl. All rights reserved</p>
             </div>
         </div>
     </footer>
