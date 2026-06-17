@@ -375,3 +375,68 @@ footer h5 {
         padding: 40px 0 20px 0;
     }
 }
+
+/* Navbar Toggler (Hamburger Menu) - No border or focus outline */
+.navbar-toggler,
+.navbar-toggler:focus,
+.navbar-toggler:active {
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+/* Responsive styles for homepage container on mobile and tablet */
+@media (max-width: 991.98px) {
+    /* Set consistent and beautiful margins for the homepage */
+    .homepage-container {
+        padding-left: 28px !important;
+        padding-right: 28px !important;
+        margin-top: 25px !important;
+    }
+    
+    /* Center the hero text and buttons on mobile/tablet for a balanced look */
+    .homepage-container .hero-content {
+        text-align: center !important;
+        margin-bottom: 2.5rem !important;
+        padding: 0 10px;
+    }
+    
+    .homepage-container .hero-buttons {
+        justify-content: center !important;
+    }
+    
+    /* Add generous spacing between homepage sections for premium feel */
+    .homepage-container .py-5 {
+        padding-top: 3.5rem !important;
+        padding-bottom: 3.5rem !important;
+    }
+    
+    .homepage-container .mb-5 {
+        margin-bottom: 3.5rem !important;
+    }
+}
+
+@media (max-width: 575.98px) {
+    /* Mobile-specific adjustments for homepage */
+    .homepage-container {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+    
+    /* Make the hero circle illustration slightly smaller to prevent any overflow on small screens */
+    .hero-illustration-circle {
+        width: 260px !important;
+        height: 260px !important;
+    }
+    
+    /* Scale the 100% Halal badge so it fits beautifully */
+    .homepage-container .hero-image-col .position-absolute {
+        max-width: 140px !important;
+        padding: 8px 12px !important;
+    }
+    
+    .homepage-container .hero-image-col .position-absolute p {
+        font-size: 0.7rem !important;
+    }
+}
+

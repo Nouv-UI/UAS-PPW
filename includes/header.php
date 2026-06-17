@@ -44,7 +44,7 @@ if (isset($_SESSION['cart'])) {
                 
 
                 <!-- Responsive Toggle Button -->
-                <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="border: none; color: #7A1A1A;">
+                <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="border: none; box-shadow: none !important; outline: none !important; color: #7A1A1A;">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
@@ -132,4 +132,4 @@ if (isset($_SESSION['cart'])) {
         <?php endif; ?>
     </div>
 
-    <main class="container my-4" style="max-width: 1200px;">
+    <main class="container my-4 <?= (basename($_SERVER['SCRIPT_NAME']) == 'index.php') ? 'homepage-container' : '' ?>" style="max-width: 1200px;">

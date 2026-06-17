@@ -22,20 +22,20 @@ try {
 
 <!-- Hero Section -->
 <div class="row align-items-center py-5 mb-5">
-    <div class="col-lg-6 mb-4 mb-lg-0">
+    <div class="col-lg-6 mb-4 mb-lg-0 hero-content">
         <h1 class="display-4 fw-bold mb-3" style="color: var(--primary-color);">Cita Rasa Tradisional,<br>Kemasan Modern</h1>
         <p class="lead text-muted mb-4" style="font-size: 1.1rem; line-height: 1.8;">
             Selamat datang di <strong>Jajan Pasar An-NaHL</strong>. Kami menghadirkan aneka jajanan pasar khas Nusantara yang dibuat dengan bahan alami premium, tanpa pengawet, dan cinta rasa autentik.
         </p>
-        <div class="d-flex flex-wrap gap-3">
+        <div class="d-flex flex-wrap gap-3 hero-buttons">
             <a href="/jp-annahls/pages/katalog.php" class="btn btn-primary-pill px-4 py-3"><i class="bi bi-bag-plus me-2"></i> Belanja Sekarang</a>
             <a href="#about" class="btn btn-secondary-pill px-4 py-3"><i class="bi bi-info-circle me-2"></i> Tentang Kami</a>
         </div>
     </div>
-    <div class="col-lg-6 text-center">
+    <div class="col-lg-6 text-center hero-image-col">
         <!-- Hero Illustration using styled divs -->
         <div class="position-relative d-inline-block">
-            <div class="rounded-circle overflow-hidden shadow-lg mx-auto" style="width: 320px; height: 320px; border: 8px solid var(--navbar-bg);">
+            <div class="rounded-circle overflow-hidden shadow-lg mx-auto hero-illustration-circle" style="border: 8px solid var(--navbar-bg);">
                 <svg viewBox="0 0 100 100" class="w-100 h-100" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect width="100" height="100" fill="#FEFBF4"/>
                     <circle cx="50" cy="50" r="40" fill="#FFF9DB"/>
