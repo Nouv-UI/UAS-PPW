@@ -4,7 +4,7 @@
 
 ---
 
-## 🌟 Fitur Utama
+## Main Features
 
 ### Halaman Publik (Pelanggan)
 1. **Beranda (Home):** Hero banner, promosi/highlight produk aktif dengan fun facts unik, serta tentang kami.
@@ -24,7 +24,7 @@
 
 ---
 
-## 🛠️ Arsitektur Database & Implementasi Akademik
+## Database Implementation
 
 Proyek ini memaksimalkan kemampuan DBMS MySQL dengan mengintegrasikan beberapa objek database lanjutan:
 
@@ -44,7 +44,7 @@ Sistem web menangkap exception database (PDOException) dan menampilkannya sebaga
 
 ---
 
-## 📂 Struktur Direktori
+## File Structure
 
 ```
 jp-annahls/
@@ -79,27 +79,3 @@ jp-annahls/
 ├── .gitignore
 └── README.md
 ```
-
----
-
-## 🚀 Panduan Instalasi Lokal (XAMPP/Laragon)
-
-1. **Unduh/Salin Berkas:**
-   Salin folder project ini (`jp-annahls`) ke dalam direktori server lokal Anda (biasanya `C:\xampp\htdocs\`).
-   
-2. **Impor Database:**
-   * Buka browser dan akses `http://localhost/phpmyadmin/`.
-   * Buat database baru bernama `jp_annahl`.
-   * Masuk ke menu **Import** dan pilih file `jp_annahl (1).sql` yang ada di dalam root folder project ini. Klik **Go** untuk mengimpor skema, view, trigger, fungsi, dan data awal.
-
-3. **Akses Website:**
-   Buka browser dan kunjungi `http://localhost/jp-annahls/`.
-
-4. **Kredensial Login Bawaan:**
-   * **Akun Administrator:**
-     * Username: `naufal`
-     * Password: `rahasia123`
-   * **Akun Pelanggan (User):**
-     * Username: `budi01`
-     * Password: `userpass1`
-     * *Catatan: Sistem secara otomatis akan melakukan enkripsi satu arah (password_hash) saat akun-akun ini berhasil login untuk pertama kali.*
