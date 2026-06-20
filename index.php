@@ -47,6 +47,72 @@ try {
     </div>
 </div>
 
+<!-- Location Section -->
+<div class="py-5 mb-5 animate-fade-in">
+    <div class="text-center mb-4">
+        <h2 class="fw-bold" style="color: var(--primary-color);">Lokasi kami</h2>
+        <p class="text-muted">Kunjungi toko kami untuk melakukan pembelian secara langsung untuk experience yang lebih mendalam</p>
+    </div>
+    
+    <div class="row g-4 align-items-stretch">
+        <!-- Address & Details Card -->
+        <div class="col-lg-4 d-flex flex-column justify-content-between">
+            <div class="p-4 bg-white rounded-4 shadow-sm border border-1 h-100 d-flex flex-column justify-content-between" style="border-color: #E5E7EB !important;">
+                <div>
+                    <div class="d-flex align-items-center mb-3">
+                        <span class="material-icons-outlined me-2 text-danger" style="font-size: 2rem; color: var(--primary-color) !important;">place</span>
+                        <h4 class="fw-bold m-0" style="color: var(--primary-color);">Alamat Toko</h4>
+                    </div>
+                    <p class="text-muted" style="line-height: 1.6; font-size: 0.95rem;">
+                        <strong>Jajan Pasar An-NaHL</strong><br>
+                        Jl. Nogotirto, Gamping, Sleman,<br>
+                        Daerah Istimewa Yogyakarta
+                    </p>
+                    <hr>
+                    
+                    <div class="mb-3">
+                        <div class="d-flex align-items-center mb-2">
+                            <span class="material-icons-outlined me-2 text-muted" style="font-size: 1.2rem;">schedule</span>
+                            <span class="fw-bold small text-uppercase" style="color: var(--primary-color);">Jam Operasional</span>
+                        </div>
+                        <p class="small text-muted mb-0">Setiap Hari: 06.00 - 17.00 WIB</p>
+                    </div>
+                    <hr>
+                    
+                    <div>
+                        <div class="d-flex align-items-center mb-2">
+                            <span class="material-icons-outlined me-2 text-muted" style="font-size: 1.2rem;">phone</span>
+                            <span class="fw-bold small text-uppercase" style="color: var(--primary-color);">Kontak</span>
+                        </div>
+                        <p class="small text-muted mb-0"><i class="bi bi-telephone-fill me-1" style="font-size: 0.8rem;"></i> +62 812-3014-0568</p>
+                    </div>
+                </div>
+                
+                <div class="mt-4">
+                    <a href="https://maps.app.goo.gl/BS7pn2bWiryKf2R58" target="_blank" class="btn btn-primary-pill w-100 py-2.5 text-center d-flex align-items-center justify-content-center">
+                        <span class="material-icons-outlined me-2" style="font-size: 1.2rem;">directions</span> Buka Rute
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Google Maps Embed -->
+        <div class="col-lg-8">
+            <div class="rounded-4 overflow-hidden shadow-sm border border-1 h-100" style="min-height: 350px; border-color: #E5E7EB !important;">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.8722421374526!2d110.437149!3d-7.7959049!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a5a3a79d63c5d%3A0x7d3a0429f55e3966!2sBerbah%2C%20Sleman%20Regency%2C%20Special%20Region%20of%20Yogyakarta!5e0!3m2!1sen!2sid!4v1718800000000!5m2!1sen!2sid" 
+                    width="100%" 
+                    height="100%" 
+                    style="border:0; min-height: 350px; display: block;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </div>
+</div>
+
 <!-- Highlight Products Section -->
 <?php if (!empty($highlights)): ?>
 <div class="py-5 mb-5">
