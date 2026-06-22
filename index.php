@@ -100,7 +100,7 @@ try {
         <div class="col-lg-8">
             <div class="rounded-4 overflow-hidden shadow-sm border border-1 h-100" style="min-height: 350px; border-color: #E5E7EB !important;">
                 <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.8722421374526!2d110.437149!3d-7.7959049!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a5a3a79d63c5d%3A0x7d3a0429f55e3966!2sBerbah%2C%20Sleman%20Regency%2C%20Special%20Region%20of%20Yogyakarta!5e0!3m2!1sen!2sid!4v1718800000000!5m2!1sen!2sid" 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2245.2348058995744!2d110.33974620829412!3d-7.768349010836161!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a5929c16e5577%3A0x6fbf8e24f66a0905!2sJajan%20Pasar%20An-NAhL%20Jogja!5e0!3m2!1sid!2sid!4v1782144939246!5m2!1sid!2sid" 
                     width="100%" 
                     height="100%" 
                     style="border:0; min-height: 350px; display: block;" 
